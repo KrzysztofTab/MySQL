@@ -1,0 +1,35 @@
+ZnajdŸ w bazie:
+
+1. Pytanie nr 15
+	SELECT * FROM pytania WHERE id=15
+	
+2. Pytania, w których poprawn¹ odpowiedzi¹ jest "a"
+	SELECT * FROM pytania WHERE answer="a"
+	
+3. Pytania z roku 2018
+	SELECT * FROM pytania WHERE rok=2018
+	
+4. Pytania z programowania z roku 2019
+	SELECT * FROM pytania WHERE rok=2019 AND kategoria="programowanie"
+
+5. Tylko treœci pytañ i 4 odpowiedzi z roku 2017
+	SELECT id, tresc, odpa, odpb, odpc, odpd FROM pytania WHERE rok=2017
+
+6. Pytania u³o¿one alfabetycznie wg treœci
+	SELECT * FROM pytania ORDER BY tresc ASC
+	
+7. Treœci pytañ o numerach 10-12
+	SELECT tresc FROM pytania WHERE id>=10 AND id<=12 
+   //" albo SELECT tresc FROM pytania WHERE id BETWEEN 10 AND 12"
+
+8. Pytania zaczynaj¹ce siê od s³ów “Jak”
+	SELECT * FROM pytania WHERE tresc LIKE "Jak%"
+
+9. Pytania zawieraj¹ce frazê "C++"
+	SELECT * FROM pytania WHERE tresc LIKE '%C++%' 
+   OR odpa LIKE '%C++%' OR odpb LIKE '%C++%'
+   OR odpc LIKE '%C++%' OR odpd LIKE '%C++%'
+	
+10. Pytania z programowania oraz systemów operacyjnych i sieci z roku 2016
+	SELECT * FROM pytania WHERE (kategoria="programowanie" 
+	OR kategoria="systemy operacyjne i sieci") AND rok=2016

@@ -1,0 +1,31 @@
+Zapytnaia:
+
+1. Zmień nazwisko klienta id=4 na "Psikuta".
+	UPDATE klienci set nazwisko="Psikuta" WHERE idklienta=4
+	
+2. Zwieksz cenę kisazek o 10%.
+	UPDATE ksiazki SET cena= ROUND (cena*1.1,2) 
+	
+3. Zmniejsz cene najdroszej ksiazki o 10zł.
+	UPDATE ksiazki SET cena=cena-10 ORDER BY cena DESC LIMIT 1
+	
+4. Zmień imie i nazwisko klienta o id 10 na (Joanna Dostojewska).
+	UPDATE klienci SET imie="Joanna", nazwisko="Dostojewska" WHERE idklienta=10
+
+5. Zmień status zzamóweinia 4-5 na wysłane.
+	UPDATE zamowienia SET status="wyslano" WHERE idzamowienia BETWEEN 4 AND 5
+	
+6. Dodaj nowego klienta (Franciszek, Janowski, Trzebnica).
+	INSERT INTO klienci VALUES (NULL,"Franciszek", "Janowski", "Trzebnica")
+	
+7. Dodaj nowe zamówienie dla klienta nr.7 ksiązki nr.3.
+	INSERT INTO zamowienia (idzamowienia, data, status, idklienta, idksiazki) VALUES (NULL, "2020-01-01", "oczekiwanie", 7, 3)
+
+8. Dodaj nową ksiązkę (autor: Grębosz, tytuł: Synfonia C++).
+	INSERT INTO ksiazki (idksiazki, nazwiskoautora, tytul) VALUES (NULL, "Grębosz", "Synfonia C++")
+
+9. Wstaw dwóch nowych klientów.
+	INSERT INTO klienci VALUES (NULL, "Tomasz", "Kot","Los Lobos"),(NULL, "Kriss", "Tobo", "Wawa")
+	
+10. Dodaj klienta za pomocą SET.
+	INSERT INTO klienci SET idklienta=NULL, imie="Grzgorz", nazwisko="Brzęczyszczykiewicz", miejscowosc=" Chrząszczyżewoszyce"

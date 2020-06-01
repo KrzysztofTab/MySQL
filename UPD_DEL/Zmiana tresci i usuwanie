@@ -1,0 +1,8 @@
+Zadania:
+1. Zmień zawrtosć nazwiska na idkienta=3.
+	UPDATE klienci SET nazwisko="Tuptuś" WHERE idklienta=3
+	
+2. Usuń z bazy zamówienia idzamówienia=2.
+	DELETE FROM zamowienia WHERE idzamowienia=2
+	
+3. 
